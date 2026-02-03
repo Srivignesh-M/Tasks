@@ -7,7 +7,7 @@ public static void main(String[] args) throws IOException{
 	byte[] input=new byte[9];
 	DatagramPacket dp=new DatagramPacket(input,9);
 	ds.receive(dp);
-	String msg=new String(dp.getData());
+	String msg=new String(dp.getData(),0,dp.getLength());
 	System.out.println(msg);
 }
 }
