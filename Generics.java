@@ -3,9 +3,10 @@ package Tasks;
 public class Generics {
 
 	public static void main(String[] args) {
-		Pair<Integer,Integer> pair=new Pair<>(1,2);
-		System.out.println(pair.toString());
-		
+		Pair<Integer,Integer> pair=new Pair<>();
+		pair.setFirst(1);
+		pair.setSecond(2);
+		System.out.println(pair.toString());	
 	}
 }
 class Pair<A,B>{
@@ -14,6 +15,10 @@ class Pair<A,B>{
 	Pair(A val1,B val2){
 		this.val1=val1;
 		this.val2=val2;
+	}
+	Pair(){
+		this.val1=null;
+		this.val2=null;
 	}
 	public A getFirst() {
         return val1;
